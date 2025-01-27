@@ -1,4 +1,4 @@
-public class Demo021 {
+public class Demo020 {
 
     public static String getFizzBizz(int num) {
         if (num <= 0) {
