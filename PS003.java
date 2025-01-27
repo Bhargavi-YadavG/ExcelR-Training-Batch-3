@@ -1,12 +1,10 @@
 class Bowler {
-    // Instance variables
     private String name;
     private int wickets;
     private int matches;
     private int balls_bowled;
     private int runs_conceded;
-
-    // Default constructor
+    
     public Bowler() {
         this.name = "";
         this.wickets = 0;
@@ -14,8 +12,6 @@ class Bowler {
         this.balls_bowled = 0;
         this.runs_conceded = 0;
     }
-
-    // Parameterized constructor
     public Bowler(String name, int wickets, int matches, int balls_bowled, int runs_conceded) {
         this.name = name;
         this.wickets = wickets;
@@ -23,8 +19,6 @@ class Bowler {
         this.balls_bowled = balls_bowled;
         this.runs_conceded = runs_conceded;
     }
-
-    // Method to compute bowling average
     public void computeBowlingAverage() {
         if (validateInput()) {
             if (wickets > 0) {
@@ -36,8 +30,6 @@ class Bowler {
             }
         }
     }
-
-    // Method to compute strike rate
     public void computeStrikeRate() {
         if (validateInput()) {
             if (balls_bowled > 0) {
@@ -49,8 +41,6 @@ class Bowler {
             }
         }
     }
-
-    // Method to show statistics
     public void showStatistics() {
         if (validateInput()) {
             System.out.println("Name=" + name);
@@ -60,8 +50,6 @@ class Bowler {
             System.out.println("runs_conceded=" + runs_conceded);
         }
     }
-
-    // Method to validate input
     private boolean validateInput() {
         if (wickets < 0 || matches < 0 || balls_bowled < 0 || runs_conceded < 0) {
             System.out.println("Error");
@@ -74,14 +62,9 @@ class Bowler {
         return true;
     }
 }
-
-// Testing class
 public class PS003 {
     public static void main(String[] args) {
-        // Creating an object of Bowler
         Bowler bowler = new Bowler("Sachin", 10, 5, 750, 463);
-
-        // Calling methods
         bowler.showStatistics();
         bowler.computeBowlingAverage();
         bowler.computeStrikeRate();
